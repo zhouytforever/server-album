@@ -1,0 +1,8 @@
+{
+  "name": "album-server",
+  "version": "1.0.0",
+  "description": "album-server",
+  "main": "index.js",
+  "author": "Joyt",
+  "license": "MIT"
+}
