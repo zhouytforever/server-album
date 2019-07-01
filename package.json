@@ -4,5 +4,16 @@
   "description": "album-server",
   "main": "index.js",
   "author": "Joyt",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "mongo": "^0.1.0",
+    "vue": "^2.6.10",
+    "vue-server-renderer": "^2.6.10"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.0.1",
+    "mocha": "^6.1.4"
+  }
 }
