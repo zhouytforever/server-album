@@ -5,6 +5,10 @@
   "main": "index.js",
   "author": "Joyt",
   "license": "MIT",
+  "scripts":  {
+    "start": "node index",
+    "test": "mocha"
+  },
   "dependencies": {
     "koa": "^2.7.0",
     "mongo": "^0.1.0",
