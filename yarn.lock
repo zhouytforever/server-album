@@ -528,7 +528,7 @@ eslint-visitor-keys@^1.0.0:
 
 eslint@^6.0.1:
   version "6.0.1"
-  resolved "https://registry.npm.taobao.org/eslint/download/eslint-6.0.1.tgz#4a32181d72cb999d6f54151df7d337131f81cda7"
+  resolved "https://registry.npm.taobao.org/eslint/download/eslint-6.0.1.tgz?cache=0&sync_timestamp=1561427671927&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint%2Fdownload%2Feslint-6.0.1.tgz#4a32181d72cb999d6f54151df7d337131f81cda7"
   integrity sha1-SjIYHXLLmZ1vVBUd99M3Ex+Bzac=
   dependencies:
     "@babel/code-frame" "^7.0.0"
