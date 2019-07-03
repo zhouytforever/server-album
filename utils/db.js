@@ -13,9 +13,14 @@ const openAlbum = (op) => {
   })
 }
 
-const findOnePage = (album, pageNum, pageSize = 20) => {
-  album.find().skip((pageNum - 1) * pageSize).limit(pageSize)
-}
+const findOnePage = (pageNum = 1, pageSize = 20) => new Promise((resolve, reject) => {
+  openAlbum((album) => {
+    album.find().skip((pageNum - 1) * pageSize).limit(pageSize).toArray((err, arr) => {
+      if (err) reject(err)
+      resolve(arr)
+    })
+  })
+})
 
 module.exports = {
   openAlbum,

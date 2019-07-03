@@ -6,9 +6,10 @@ const router = async (req) => {
   console.log(req.url)
   switch (req.url) {
     case '/favicon.ico':
-      console.log('favicon.ico')
-      console.log(fs.readFileSync(new URL('/home/joyt/project/album-server/assets/favicon.ico')))
-      result = fs.readFileSync(new URL('/home/joyt/project/album-server/assets/favicon.ico'))
+      result = fs.readFileSync(new URL('file://localhost/home/joyt/project/album-server/assets/favicon.ico'))
+      break
+    case '/album':
+      result = require('../view/album')
       break
     default: result = view
   }

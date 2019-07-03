@@ -11,8 +11,8 @@ const commonTemplate = (html) => `
   </head>
   <body>${html}</body>
 `
-const createApp = (template) => {
-  let vueApp = new Vue({ template })
+const createApp = (vueObj) => {
+  let vueApp = new Vue(vueObj)
   return new Promise((resolve, reject) => {
     renderer.renderToString(vueApp, (err, html) => {
       if (err) reject(err)
@@ -20,7 +20,5 @@ const createApp = (template) => {
     })
   })
 }
-module.exports = {
-  commonTemplate,
-  createApp
-}
+
+module.exports = createApp
