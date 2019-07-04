@@ -6,7 +6,7 @@
   "author": "Joyt",
   "license": "MIT",
   "scripts": {
-    "start": "node index",
+    "start": "node index >> run.log",
     "test": "mocha"
   },
   "dependencies": {

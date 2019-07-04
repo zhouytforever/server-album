@@ -3,17 +3,15 @@ const PicGroup = require('../components/pic-group')
 const { findOnePage } = require('../utils/db')
 
 const template = `
-  <div class="album-continer">
-    <header>
-      {{current.title}}
-    </header>
-    <section>
-      <pic-group :pics="current.pics"></pic-group>
-    </section>
-    <footer>
-      &copy;闲散游客
-    </footer>
-  </div>
+<div class="album-continer">
+  <header>
+    {{current.title}}
+  </header>
+  <pic-group :pics="current.pics"></pic-group>
+  <footer>
+    &copy;闲散游客
+  </footer>
+</div>
 `
 
 const dbapp = async () => {
@@ -33,6 +31,7 @@ const dbapp = async () => {
       }
     },
     mounted () {
+      alert('mounted')
     }
   }
   return createApp(app)

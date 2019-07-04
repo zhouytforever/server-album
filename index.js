@@ -8,3 +8,7 @@ server.use(async ctx => {
 })
 
 server.listen(3000)
+
+let date = new Date()
+
+console.log('服务器启动···' + date.toDateString() + ' ' + date.toTimeString())
