@@ -1,7 +1,14 @@
 const Koa = require('koa')
+const path = require('path')
 const router = require('./router')
+const assets = require('koa-static')
+const staticPath = './assets'
 
 const server = new Koa()
+
+server.use(assets(
+  path.join(__dirname, staticPath)
+))
 
 server.use(async ctx => {
   ctx.body = await router(ctx.request)

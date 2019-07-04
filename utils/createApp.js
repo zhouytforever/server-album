@@ -1,13 +1,14 @@
 const Vue = require('vue')
 const renderer = require('vue-server-renderer').createRenderer()
 
-const commonTemplate = (html) => `
+const commonTemplate = (html, title = '偷偷看', css = 'default.css') => `
 <!DOCTYPE html>
 <html>
   <head>
-    <title>偷偷看</title>
+    <title>${title}</title>
     <meta charset="utf-8"></meta>
     <link rel="icon" href="favicon.ico"></link>
+    <link rel="stylesheet" href="${css}"></link>
   </head>
   <body>${html}</body>
 `

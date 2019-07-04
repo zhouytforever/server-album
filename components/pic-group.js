@@ -1,9 +1,9 @@
 const Vue = require('vue')
 
 const template = `
-<section>
-  <div v-for="e in pics">
-    <img :src="e"></img>
+<section class="pic-group">
+  <div v-for="e in pics" class="pic-container">
+    <img :src="e" class="pic"></img>
   </div>
 </section>
 `

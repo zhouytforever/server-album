@@ -5,7 +5,9 @@ const { findOnePage } = require('../utils/db')
 const template = `
 <div class="album-continer">
   <header>
-    {{current.title}}
+    < class="pre">{{pre.title}}</a>
+    <h2>{{current.title}}</h2>
+    <a class="suf">{{suf.title}}</a>
   </header>
   <pic-group :pics="current.pics"></pic-group>
   <footer>
@@ -20,12 +22,17 @@ const dbapp = async () => {
     template,
     data: function () {
       return {
-        current: page[0],
+        currentIndex: 0,
         page,
         pageNum: 1
       }
     },
     components: { PicGroup },
+    computed: {
+      current: ({ currentIndex, page }) => page[currentIndex],
+      pre: ({ currentIndex, page }) => currentIndex - 1 < 0 ? { title: '没有了' } : page[currentIndex - 1],
+      suf: ({ currentIndex, page }) => currentIndex === page.length - 1 ? { title: '没有了' } : page[currentIndex + 1]
+    },
     methods: {
       next: (current) => {
       }
