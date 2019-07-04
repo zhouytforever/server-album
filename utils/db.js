@@ -9,7 +9,7 @@ const openAlbum = (op) => {
     if (err) throw err
     console.log('数据库已经连接')
     await op(client.db(db).collection(collection))
-    db.close()
+    client.close()
   })
 }
 
