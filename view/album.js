@@ -3,16 +3,20 @@ const PicGroup = require('../components/pic-group')
 const { findOnePage } = require('../utils/db')
 
 const template = `
-<div class="album-continer">
+<div class="album-container">
   <header>
-    < class="pre">{{pre.title}}</a>
-    <h2>{{current.title}}</h2>
-    <a class="suf">{{suf.title}}</a>
+    <h3>{{current.title}}</h3>
   </header>
   <pic-group :pics="current.pics"></pic-group>
-  <footer>
-    &copy;闲散游客
-  </footer>
+    <a class="pre">
+      <span class="arrow-left"></span>
+      <span class="title">{{pre.title}}</span>
+    </a>
+    <a class="suf" @click="next">
+      <span class="title">{{suf.title}}</span>
+      <span class="arrow-right"></span>
+    </a>
+  <footer>&copy;&nbsp;闲散游客</footer>
 </div>
 `
 
@@ -34,7 +38,8 @@ const dbapp = async () => {
       suf: ({ currentIndex, page }) => currentIndex === page.length - 1 ? { title: '没有了' } : page[currentIndex + 1]
     },
     methods: {
-      next: (current) => {
+      next (current) {
+        alert('next')
       }
     },
     mounted () {

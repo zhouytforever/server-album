@@ -7,6 +7,7 @@ const commonTemplate = (html, title = '偷偷看', css = 'default.css') => `
   <head>
     <title>${title}</title>
     <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="favicon.ico"></link>
     <link rel="stylesheet" href="${css}"></link>
   </head>
