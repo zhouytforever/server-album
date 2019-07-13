@@ -6,8 +6,9 @@
   "author": "Joyt",
   "license": "MIT",
   "scripts": {
-    "# start": "node index",
-    "start": "nohup node index >> run.log &",
+    "start": "node index",
+    "bkgrd": "nohup node index >> run.log &",
+    "pid":  "ps -ef | grep node",
     "test": "mocha"
   },
   "dependencies": {
