@@ -5,18 +5,21 @@ const assets = require('koa-static')
 const staticPath = './statics'
 
 const server = new Koa()
-server.use(assets(
-  path.join(__dirname, staticPath)
-))
-
-server.use(async (ctx, next) => {
-  ctx.set('Access-Control-Allow-Origin', 'http://176.122.150.118:8080')
-  ctx.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
-  ctx.set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS')
-  await next()
-})
-
-server.use(router.routes())
+server
+  .use(assets(
+    path.join(__dirname, staticPath)
+  ))
+  .use(async (ctx, next) => {
+    ctx.set('Access-Control-Allow-Origin', '*')
+    ctx.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+    ctx.set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS, HEAD')
+    // ctx.set('Cache-Control', 'no-cache')
+    // ctx.set('Content-Encoding', 'gzip')
+    // ctx.set('Content-type', 'application/json;charset=utf-8')
+    await next()
+  })
+  .use(router.routes())
+  .use(router.allowedMethods())
 
 server.listen(3000)
 
