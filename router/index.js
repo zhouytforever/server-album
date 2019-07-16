@@ -6,8 +6,7 @@ const router = new Router()
 router
   .post('/login', async (ctx, next) => {
     console.log('登录')
-    console.log(ctx.params)
-    console.log(ctx.url)
+    console.log(ctx.request.body)
     console.log(JSON.stringify(ctx.params, null, 2))
     ctx.body = { msg: 'success' }
   })

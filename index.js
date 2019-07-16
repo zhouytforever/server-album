@@ -3,6 +3,7 @@ const path = require('path')
 const router = require('./router')
 const assets = require('koa-static')
 const staticPath = './statics'
+var bodyParser = require('koa-bodyparser')
 
 const server = new Koa()
 server
@@ -18,6 +19,7 @@ server
     // ctx.set('Content-type', 'application/json;charset=utf-8')
     await next()
   })
+  .use(bodyParser())
   .use(router.routes())
   .use(router.allowedMethods())
 
